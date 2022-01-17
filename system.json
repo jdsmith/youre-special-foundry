@@ -17,12 +17,12 @@
       "path": "lang/en.json"
     }
   ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "gridDistance": 1,
+  "gridUnits": "yd",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "url": "",
-  "manifest": "",
+  "url": "https://github.com/jdsmith/youre-special-foundry",
+  "manifest": "https://github.com/jdsmith/youre-special-foundry/blob/main/system.json",
   "download": "",
   "license": "LICENSE.txt"
 }

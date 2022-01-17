@@ -1,45 +1,65 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": ["character", "npc"],
     "templates": {
       "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
+        "hp": {
+          "value": 0
         },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
+        "biography": "",
+        "attributes": {
+          "xp": {
+            "value": 1
+          },
+          "strength": {
+            "value": 1
+          },
+          "perception": {
+            "value": 1
+          },
+          "endurance": {
+            "value": 1
+          },
+          "charisma": {
+            "value": 1
+          },
+          "agility": {
+            "value": 1
+          },
+          "luck": {
+            "value": 1
+          }
+        }
       }
     },
     "character": {
-      "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
-        }
-      }
+      "templates": ["base"]
+    },
+    "npc": {
+      "templates": ["base"]
     }
   },
   "Item": {
-    "types": ["item", "feature"],
+    "types": ["gear", "weapon", "armor", "chem", "aid"],
     "templates": {
       "base": {
-        "description": ""
+        "name": "",
+        "description": "",
+        "enb": 0,
+        "quantity": 1,
+        "conditionSegments": 3,
+        "currentCondition": 0,
+        "notes": "notes"
       }
     },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
-    },
-    "feature": {
+    "gear": {
       "templates": ["base"]
+    },
+    "weapon": {
+      "templates": ["base"],
+      "dam": "0",
+      "atk": "S",
+      "type": "Melee"
     }
   }
 }

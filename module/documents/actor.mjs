@@ -44,8 +44,9 @@ export class YoureSpecialActor extends Actor {
   _prepareCharacterData(actorData) {
     if (actorData.type !== 'character') return;
 
-    // Make modifications to data here. For example:
+    // derived stats: ENB limit, 
     const data = actorData.data;
+    data.enbLimit = data.attributes.strength.value + 10;
   }
 
   /**
@@ -66,9 +67,11 @@ export class YoureSpecialActor extends Actor {
   _getCharacterRollData(data) {
     if (this.data.type !== 'character') return;
 
-    // Add level for easier access, or fall back to 0.
-    if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
+    //move SPECIAL attributes to the top
+    if (data.abilities) {
+      for (let [k, v] of Object.entries(data.abilities)) {
+        data[k] = foundry.utils.deepClone(v);
+      }
     }
   }
 

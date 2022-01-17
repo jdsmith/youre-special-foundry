@@ -1,5 +1,13 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
 
+const GEAR_TYPES = [
+  'gear',
+  'weapon',
+  'armor',
+  'chem',
+  'aid'
+];
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -74,24 +82,24 @@ export class YoureSpecialActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
+    const perks = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'item') {
+      if (GEAR_TYPES.includes(i.type)) {
         gear.push(i);
       }
       // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
+      else if (i.type === 'perk') {
+        perks.push(i);
       }
     }
 
     // Assign and return
     context.gear = gear;
-    context.features = features;
+    context.perks = perks;
    }
 
   /* -------------------------------------------- */

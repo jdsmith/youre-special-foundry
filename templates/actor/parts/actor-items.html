@@ -21,13 +21,13 @@
           </div>
           <h4>{{weapon.name}}</h4>
         </div>
-        <div class="item-formula item-prop">{{weapon.atk}}</div>
-        <div class="item-formula item-prop">{{weapon.dam.descriptor}}</div>
-        <div class="item-formula item-prop">{{weapon.range}}</div>
-        <div class="item-formula item-prop">{{weapon.ammo.type}}</div>
-        <div class="item-formula item-prop">{{weapon.price}}</div>
-        <div class="item-formula item-prop">{{weapon.enb}}</div>
-        <div class="item-formula item-prop">{{weapon.notes}}</div>
+        <div class="item-formula item-prop">{{weapon.data.atk}}</div>
+        <div class="item-formula item-prop">{{weapon.data.dam.descriptor}}</div>
+        <div class="item-formula item-prop">{{weapon.data.range}}</div>
+        <div class="item-formula item-prop">{{weapon.data.ammo.type}}</div>
+        <div class="item-formula item-prop">{{weapon.data.price}}</div>
+        <div class="item-formula item-prop">{{weapon.data.enb}}</div>
+        <div class="item-formula item-prop">{{weapon.data.notes}}</div>
         <div class="item-controls">
           <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -53,9 +53,9 @@
           </div>
           <h4>{{item.name}}</h4>
         </div>
-        <div class="item-formula item-prop">{{item.price}}</div>
-        <div class="item-formula item-prop">{{item.enb}}</div>
-        <div class="item-formula item-prop">{{item.notes}}</div>
+        <div class="item-formula item-prop">{{item.data.price}}</div>
+        <div class="item-formula item-prop">{{item.data.enb}}</div>
+        <div class="item-formula item-prop">{{item.data.notes}}</div>
         <div class="item-controls">
           <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>

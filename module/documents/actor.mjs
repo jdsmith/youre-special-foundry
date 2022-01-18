@@ -68,8 +68,8 @@ export class YoureSpecialActor extends Actor {
     if (this.data.type !== 'character') return;
 
     //move SPECIAL attributes to the top
-    if (data.abilities) {
-      for (let [k, v] of Object.entries(data.abilities)) {
+    if (data.attributes) {
+      for (let [k, v] of Object.entries(data.attributes)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }

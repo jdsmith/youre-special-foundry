@@ -30,7 +30,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "(@agility.value)d6cs>=4",
+    formula: "(@agility.value)d6x6cs>=4",
   };
 
   // Define custom Document classes

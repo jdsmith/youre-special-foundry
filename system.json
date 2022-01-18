@@ -1,0 +1,28 @@
+{
+  "name": "yourespecial",
+  "title": "You&#39;re SPECIAL",
+  "description": "The You&#39;re SPECIAL system for FoundryVTT!",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": "9",
+  "author": "Josh Smith",
+  "esmodules": ["module/yourespecial.mjs"],
+  "styles": ["css/yourespecial.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "yd",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "url": "https://github.com/jdsmith/youre-special-foundry",
+  "manifest": "https://github.com/jdsmith/youre-special-foundry/blob/main/system.json",
+  "download": "",
+  "license": "LICENSE.txt"
+}

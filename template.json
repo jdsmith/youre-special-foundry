@@ -12,21 +12,33 @@
         "rads": 0,
         "attributes": {
           "strength": {
+            "label": "Strength",
+            "abbreviation": "S",
             "value": 1
           },
           "perception": {
+            "label": "Perception",
+            "abbreviation": "P",
             "value": 1
           },
           "endurance": {
+            "label": "Endurance",
+            "abbreviation": "E",
             "value": 1
           },
           "charisma": {
+            "label": "Charisma",
+            "abbreviation": "C",
             "value": 1
           },
           "intelligence": {
+            "label": "Intelligence",
+            "abbreviation": "I",
             "value": 1
           },
           "agility": {
+            "label": "Agility",
+            "abbreviation": "A",
             "value": 1
           },
           "luck": {

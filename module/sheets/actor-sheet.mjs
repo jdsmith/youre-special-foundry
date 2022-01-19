@@ -1,4 +1,5 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import { rollTest } from "../test.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -214,6 +215,11 @@ export class YoureSpecialActorSheet extends ActorSheet {
         const item = this.actor.items.get(itemId);
         if (item) return item.roll();
       }
+    }
+
+    // handle attribute rolls
+    if (dataset.attributeName) {
+      return rollTest(dataset.attributeName, this.actor);
     }
 
     // Handle rolls that supply the formula directly.

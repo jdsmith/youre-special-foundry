@@ -1,3 +1,5 @@
+import { getTestOptions, rollTest } from '../test.js';
+
 /**
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
@@ -12,8 +14,9 @@ export class YoureSpecialItem extends Item {
     super.prepareData();
     const itemData = this.data.data;
     if (this.type === 'weapon') {
+      itemData.attackDescriptor = CONFIG.YOURESPECIAL.attributes[itemData.atk].text;
       itemData.dam.descriptor = itemData.dam.modifiedBy ? (
-        `${itemData.dam.value} + ${itemData.dam.modifiedBy}`
+        `${itemData.dam.value} + ${CONFIG.YOURESPECIAL.attributes[itemData.dam.modifiedBy].abbreviation}`
       ) : itemData.dam.value
     }
   }
@@ -31,6 +34,13 @@ export class YoureSpecialItem extends Item {
     return rollData;
   }
 
+  getTestAttribute() {
+    if (this.type === 'weapon') {
+      return this.data.data.atk;
+    }
+    return null;
+  }
+
   /**
    * Handle clickable rolls.
    * @param {Event} event   The originating click event
@@ -38,25 +48,13 @@ export class YoureSpecialItem extends Item {
    */
   async roll() {
     const item = this.data;
+    const testAttribute = this.getTestAttribute();
 
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-    const rollMode = game.settings.get('core', 'rollMode');
-    let label = item.name;
-
-    // Retrieve roll data.
-    const rollData = this.getRollData();
-
-    if (item.type === 'weapon') {
-      item.data.formula = `(@${item.data.atk}.value)d6x6cs>3`;
-      const totalDamage = rollData.item.dam.modifiedBy ? (
-        item.data.dam.value + rollData[rollData.item.dam.modifiedBy].value
-      ) : item.data.dam.value;
-      label = `${item.name}: ${totalDamage} damage`
-    }
 
     // If there's no roll data, send a chat message.
-    if (!item.data.formula) {
+    if (!testAttribute) {
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,
@@ -66,16 +64,7 @@ export class YoureSpecialItem extends Item {
     }
     // Otherwise, create a roll and send a chat message from it.
     else {
-      // Invoke the roll and submit it to chat.
-      const roll = new Roll(rollData.item.formula, rollData);
-      // If you need to store the value first, uncomment the next line.
-      // let result = await roll.roll({async: true});
-      roll.toMessage({
-        speaker: speaker,
-        rollMode: rollMode,
-        flavor: label,
-      });
-      return roll;
+      return rollTest(testAttribute, this.actor);
     }
   }
 }

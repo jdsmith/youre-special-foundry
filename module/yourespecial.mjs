@@ -44,7 +44,9 @@ Hooks.once('init', async function() {
   Items.registerSheet("yourespecial", YoureSpecialItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
+  return preloadHandlebarsTemplates([
+    'templates/dice/roll.html',
+  ]);
 });
 
 /* -------------------------------------------- */

@@ -79,10 +79,15 @@ export class YoureSpecialActorSheet extends ActorSheet {
     const aid = [];
     const armor = []
     const perks = [];
+    let totalDR = 0;
+    let totalENB = 0;
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
+      const enb = i.data.quantity * i.data.enb;
+      totalENB += enb;
+
       // Append to gear.
       if (i.type === 'gear') {
         gear.push(i);
@@ -92,6 +97,10 @@ export class YoureSpecialActorSheet extends ActorSheet {
       }
       else if (i.type === 'armor') {
         armor.push(i);
+        if (i.data.equipped) {
+          totalDR += i.data.dr;
+          totalENB -= enb;
+        }
       }
       else if (i.type === 'chem') {
         chems.push(i);
@@ -112,6 +121,8 @@ export class YoureSpecialActorSheet extends ActorSheet {
     context.aid = aid;
     context.chems = chems;
     context.perks = perks;
+    context.dr = totalDR;
+    context.enb = totalENB;
    }
 
   /* -------------------------------------------- */

@@ -51,7 +51,7 @@
     }
   },
   "Item": {
-    "types": ["gear", "weapon", "armor", "chem", "aid"],
+    "types": ["gear", "weapon", "armor", "chem", "aid", "perk"],
     "templates": {
       "base": {
         "name": "",
@@ -68,6 +68,9 @@
         "currentCondition": 0
       }
     },
+    "perk": {
+      "templates": ["base"]
+    },
     "gear": {
       "templates": ["base", "gear"]
     },
@@ -75,8 +78,7 @@
       "templates": ["base", "gear", "gearCondition"],
       "dam": {
         "value": 0,
-        "modifiedBy": "strength",
-        "descriptor": "0+S"
+        "modifiedBy": "strength"
       },
       "atk": "strength",
       "type": "melee",
@@ -86,7 +88,8 @@
     "armor": {
       "templates": ["base", "gear", "gearCondition"],
       "dr": 1,
-      "agilityPenalty": 0
+      "agilityPenalty": 0,
+      "equipped": false
     }
   }
 }

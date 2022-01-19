@@ -1,0 +1,49 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+        <div class="grid grid-2col">
+          <div class="resource">
+            <label class="resource-label">Quantity</label>
+            <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">Encumbrance</label>
+            <input type="text" name="data.enb" value="{{data.enb}}" data-dtype="Number"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">Price</label>
+            <input type="text" name="data.price" value="{{data.price}}" data-dtype="Number"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">DR</label>
+            <input type="text" name="data.dr" value="{{data.dr}}" data-dtype="Number"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">-AGL</label>
+            <input type="text" name="data.agilityPenalty" value="{{data.agilityPenalty}}" data-dtype="Number"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">Notes</label>
+            <input type="text" name="data.notes" value="{{data.notes}}" data-dtype="String"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">Equipped?</label>
+            <input type="checkbox" name="data.equipped" {{checked actor.data.strength.proficient}} />
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+  
+      {{!-- Description Tab --}}
+      <div class="tab" data-group="primary">
+        {{editor content=data.description target="data.description" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+
+    </section>
+  </form>
+  

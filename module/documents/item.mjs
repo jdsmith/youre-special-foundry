@@ -10,6 +10,12 @@ export class YoureSpecialItem extends Item {
     // As with the actor class, items are documents that can have their data
     // preparation methods overridden (such as prepareBaseData()).
     super.prepareData();
+    const itemData = this.data.data;
+    if (this.type === 'weapon') {
+      itemData.dam.descriptor = itemData.dam.modifiedBy ? (
+        `${itemData.dam.value} + ${itemData.dam.modifiedBy}`
+      ) : itemData.dam.value
+    }
   }
 
   /**
@@ -36,10 +42,21 @@ export class YoureSpecialItem extends Item {
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     const rollMode = game.settings.get('core', 'rollMode');
-    const label = `[${item.type}] ${item.name}`;
+    let label = item.name;
+
+    // Retrieve roll data.
+    const rollData = this.getRollData();
+
+    if (item.type === 'weapon') {
+      item.data.formula = `(@${item.data.atk}.value)d6x6cs>3`;
+      const totalDamage = rollData.item.dam.modifiedBy ? (
+        item.data.dam.value + rollData[rollData.item.dam.modifiedBy].value
+      ) : item.data.dam.value;
+      label = `${item.name}: ${totalDamage} damage`
+    }
 
     // If there's no roll data, send a chat message.
-    if (!this.data.data.formula) {
+    if (!item.data.formula) {
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,
@@ -49,9 +66,6 @@ export class YoureSpecialItem extends Item {
     }
     // Otherwise, create a roll and send a chat message from it.
     else {
-      // Retrieve roll data.
-      const rollData = this.getRollData();
-
       // Invoke the roll and submit it to chat.
       const roll = new Roll(rollData.item.formula, rollData);
       // If you need to store the value first, uncomment the next line.

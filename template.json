@@ -72,7 +72,7 @@
       "gear": {
         "enb": 1,
         "quantity": 1,
-        "notes": "notes",
+        "notes": "",
         "price": 0
       },
       "gearCondition": {

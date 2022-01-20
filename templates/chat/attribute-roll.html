@@ -3,7 +3,7 @@
         <h2>Rolling {{attribute}}...</h2>
     </div>
     <div class="roll-total">
-        {{ total }} successes
+        {{ total }} {{pluralize total "success" "successes"}}
     </div>
     {{#if success}}
         <h3 class="success">Success!</h3>

@@ -223,7 +223,29 @@
   text-align: center;
 }
 
+.attribute-roll .dice-rolls .roll-result {
+  background-color: #191813;
+  color: #fff;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.attribute-roll .success {
+  color: #058C00;
+}
+
+.attribute-roll .failure {
+  color: #AC0005;
+}
+
 /* Styles limited to yourespecial sheets */
+.yourespecial {
+  /* ----------------------------------------- */
+  /*  Items Lists                              */
+  /* ----------------------------------------- */
+  /* Example style for YoureSpecial (can be removed if not needed) */
+}
+
 .yourespecial .item-form {
   font-family: "Roboto", sans-serif;
 }

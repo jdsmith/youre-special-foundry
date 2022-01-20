@@ -1,5 +1,16 @@
 .attribute-roll {
-    .dice-rolls .roll-result{
-        border: 1px solid black;
+    .dice-rolls .roll-result {
+        background-color: $c-dark;
+        color: $c-white;
+        display: inline-block;
+        padding: 0 5px;
+    }
+
+    .success {
+        color: #058C00;
+    }
+
+    .failure {
+        color: #AC0005;
     }
 }

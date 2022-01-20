@@ -1,0 +1,20 @@
+<div class="attribute-roll">
+    <div class="roll-header">
+        <h2>Rolling {{attribute}}...</h2>
+    </div>
+    <div class="roll-total">
+        {{ total }} {{pluralize total "success" "successes"}}
+    </div>
+    {{#if success}}
+        <h3 class="success">Success!</h3>
+    {{/if}}
+    {{#if failure}}
+        <h3 class="failure">Failed!</h3>
+    {{/if}}
+    {{#if draw}}
+        <h3>Draw!</h3>
+    {{/if}}
+    <div class="dice-rolls">
+        Rolled {{#each dice as | die id |}} <span class="roll-result">{{die.result}}</span> {{/each}}
+    </div>
+</div>

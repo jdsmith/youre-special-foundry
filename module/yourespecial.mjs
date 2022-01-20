@@ -44,7 +44,9 @@ Hooks.once('init', async function() {
   Items.registerSheet("yourespecial", YoureSpecialItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
+  return preloadHandlebarsTemplates([
+    'templates/dice/roll.html',
+  ]);
 });
 
 /* -------------------------------------------- */
@@ -64,6 +66,10 @@ Handlebars.registerHelper('concat', function() {
 
 Handlebars.registerHelper('toLowerCase', function(str) {
   return str.toLowerCase();
+});
+
+Handlebars.registerHelper('pluralize', function(count, single, plural) {
+  return count === 1 ? single : plural;
 });
 
 /* -------------------------------------------- */

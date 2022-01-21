@@ -464,6 +464,10 @@
   padding: 0 8px;
 }
 
+.yourespecial .encumbrance-summary {
+  margin-top: 15px;
+}
+
 .yourespecial .effects .item .effect-source,
 .yourespecial .effects .item .effect-duration,
 .yourespecial .effects .item .effect-controls {

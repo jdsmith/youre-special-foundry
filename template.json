@@ -56,14 +56,16 @@
       "exhaustion": {
         "level": 0,
         "effects": ""
-      }
+      },
+      "currentEncumbrance": 0,
+      "enbLimit": 0
     },
     "npc": {
       "templates": ["base"]
     }
   },
   "Item": {
-    "types": ["gear", "weapon", "armor", "chem", "aid", "perk"],
+    "types": ["gear", "weapon", "armor", "chem", "aid", "perk", "ammo"],
     "templates": {
       "base": {
         "name": "",
@@ -102,6 +104,10 @@
       "dr": 1,
       "agilityPenalty": 0,
       "equipped": false
+    },
+    "ammo": {
+      "templates": ["base", "gear"],
+      "type": ""
     }
   }
 }

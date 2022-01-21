@@ -123,7 +123,7 @@ export class YoureSpecialActorSheet extends ActorSheet {
     context.chems = chems;
     context.perks = perks;
     context.dr = totalDR;
-    context.enb = totalENB;
+    context.currentEncumbrance = totalENB;
    }
 
   /* -------------------------------------------- */

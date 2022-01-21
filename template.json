@@ -48,17 +48,19 @@
         "ap": {
           "value": 3,
           "max": 3
-        }
+        },
+        "caps": 0
       }
     },
     "character": {
       "templates": ["base"],
       "exhaustion": {
         "level": 0,
-        "effects": ""
+        "effects": []
       },
       "currentEncumbrance": 0,
-      "enbLimit": 0
+      "enbLimit": 0,
+      "luckPoints": 0
     },
     "npc": {
       "templates": ["base"]

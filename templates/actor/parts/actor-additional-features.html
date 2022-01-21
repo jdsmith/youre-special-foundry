@@ -1,0 +1,22 @@
+<div>
+    <div class="flexrow">
+        <h3>Exhaustion Level</h3>
+        <div>
+            <input type="text" data-dtype="Number" name="data.exhaustion.level" value="{{data.exhaustion.level}}" />
+        </div>
+    </div>
+    <ul>
+        {{#each data.exhaustion.effects as | effect id |}}
+        <li>
+            {{effect}}
+        </li>
+        {{/each}}
+    </ul>
+    <hr />
+    <div class="flexrow">
+        <h3>Luck Points</h3>
+        <div>
+            <input type="text" data-dtype="Number" name="data.luckPoints" value="{{data.luckPoints}}" />
+        </div>
+    </div>
+</div>

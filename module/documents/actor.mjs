@@ -44,7 +44,7 @@ export class YoureSpecialActor extends Actor {
   _prepareCharacterData(actorData) {
     if (actorData.type !== 'character') return;
 
-    // derived stats: ENB limit, 
+    // derived stats: ENB limit, exhaustion effects 
     const data = actorData.data;
     data.enbLimit = data.attributes.strength.value + 10;
   }

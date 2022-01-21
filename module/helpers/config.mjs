@@ -2,12 +2,12 @@ export const YOURESPECIAL = {};
 
 // Define constants here
 
-YOURESPECIAL.rangeBands = {
-  'melee': 'melee',
-  'close': 'close',
-  'far': 'far',
-  'extreme': 'extreme'
-};
+YOURESPECIAL.rangeBands = [
+  'melee',
+  'close',
+  'far',
+  'extreme',
+];
 
 YOURESPECIAL.attributes = {
   strength: {
@@ -43,3 +43,12 @@ YOURESPECIAL.attributes = {
     abbreviation: 'L',
   },
 };
+
+YOURESPECIAL.exhaustionLevels = [
+  '',
+  '-1 die for Perception, Intelligence and Charisma',
+  '-1 die for Strength, Agility and Endurance',
+  '-1 AP per turn',
+  '-1 die for all rolls, lose 1 Luck point',
+  'Unconsious and dying',
+];

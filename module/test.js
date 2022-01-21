@@ -50,9 +50,9 @@ export async function rollTest(testAttribute, actor) {
     const diceValues = result.dice[0].results;
     const resultData = {
         total,
-        success: total > testOptions.difficulty,
-        failure: total < testOptions.difficulty,
-        draw: total === testOptions.difficulty,
+        success: testOptions.difficulty && total > testOptions.difficulty,
+        failure: testOptions.difficulty && total < testOptions.difficulty,
+        draw: testOptions.difficulty && total === testOptions.difficulty,
         attribute: attributes[testAttribute].text,
         dice: diceValues,
     }

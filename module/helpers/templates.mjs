@@ -10,5 +10,6 @@
     "systems/yourespecial/templates/actor/parts/actor-features.html",
     "systems/yourespecial/templates/actor/parts/actor-items.html",
     "systems/yourespecial/templates/actor/parts/actor-perks.html",
+    "systems/yourespecial/templates/actor/parts/actor-additional-features.html",
   ]);
 };

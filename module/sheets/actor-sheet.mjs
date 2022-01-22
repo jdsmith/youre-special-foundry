@@ -63,6 +63,13 @@ export class YoureSpecialActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
+    const effects = [];
+    if(context.data.exhaustion.level) {
+      for (let i=1; i<=context.data.exhaustion.level && i<CONFIG.YOURESPECIAL.exhaustionLevels.length; i++) {
+        effects.push(CONFIG.YOURESPECIAL.exhaustionLevels[i]);
+      }
+    }
+    context.data.exhaustion.effects = effects;
   }
 
   /**

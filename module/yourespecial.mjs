@@ -72,6 +72,11 @@ Handlebars.registerHelper('pluralize', function(count, single, plural) {
   return count === 1 ? single : plural;
 });
 
+Handlebars.registerHelper('gt', function( a, b ){
+	var next =  arguments[arguments.length-1];
+	return (a > b) ? next.fn(this) : next.inverse(this);
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

@@ -1,4 +1,11 @@
 .attribute-roll {
+    .success {
+        color: #058C00;
+    }
+
+    .failure {
+        color: #AC0005;
+    }
     .dice-rolls .roll-result {
         background-color: $c-dark;
         color: $c-white;
@@ -6,12 +13,9 @@
         padding: 0 5px;
     }
 
-    .success {
-        color: #058C00;
-    }
-
-    .failure {
-        color: #AC0005;
+    .dice-rolls .roll-result.success {
+        background-color: #058C00;
+        color: white;
     }
 }
 

@@ -7,8 +7,8 @@ async function _processTestOptions(form) {
     };
 }
 
-export async function getTestOptions() {
-    const template = "systems/yourespecial/templates/dialogs/test-modifiers.html";
+export async function getTestOptions(options = {}) {
+    const template = options.adHoc ? "systems/yourespecial/templates/dialogs/ad-hoc-test.html" : "systems/yourespecial/templates/dialogs/test-modifiers.html";
     const html = await renderTemplate(template, {});
 
     return new Promise(resolve => {
@@ -37,23 +37,25 @@ export async function rollTest(testAttribute, actor) {
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor });
     const attributes = CONFIG.YOURESPECIAL.attributes;
-    const testOptions = await getTestOptions();
+    const testOptions = await getTestOptions({ adHoc: !testAttribute });
     if (testOptions.cancelled) {
         return;
     }
-    const formula = `${rollData[testAttribute].value + testOptions.testModifier}d6x6cs>3`;
+    const numberOfDice = testAttribute ? rollData[testAttribute].value + testOptions.testModifier : testOptions.testModifier;
+    const formula = `${numberOfDice}d6x6cs>3`;
     // Invoke the roll and submit it to chat.
     const roll = new Roll(formula);
     // If you need to store the value first, uncomment the next line.
     const result = await roll.roll({async: true});
     const total = result.total;
     const diceValues = result.dice[0].results;
+    const title = testAttribute ? `Rolling ${attributes[testAttribute].text}...` : `Rolling ${numberOfDice} dice...`;
     const resultData = {
         total,
         success: testOptions.difficulty && total > testOptions.difficulty,
         failure: testOptions.difficulty && total < testOptions.difficulty,
         draw: testOptions.difficulty && total === testOptions.difficulty,
-        attribute: attributes[testAttribute].text,
+        title,
         dice: diceValues,
     }
     const content = await renderTemplate(attributeRollTemplate, resultData);

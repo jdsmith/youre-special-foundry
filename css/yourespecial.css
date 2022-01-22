@@ -223,13 +223,6 @@
   text-align: center;
 }
 
-.attribute-roll .dice-rolls .roll-result {
-  background-color: #191813;
-  color: #fff;
-  display: inline-block;
-  padding: 0 5px;
-}
-
 .attribute-roll .success {
   color: #058C00;
 }
@@ -238,8 +231,20 @@
   color: #AC0005;
 }
 
+.attribute-roll .dice-rolls .roll-result {
+  background-color: #191813;
+  color: #fff;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.attribute-roll .dice-rolls .roll-result.success {
+  background-color: #058C00;
+  color: white;
+}
+
 .dice-row {
-  padding-top: 10px;
+  padding-top: 13px;
 }
 
 /* Styles limited to yourespecial sheets */
@@ -470,6 +475,10 @@
 
 .yourespecial .encumbrance-summary {
   margin-top: 15px;
+}
+
+.yourespecial .perk-description-editor, .yourespecial .perk-description-editor .editor {
+  height: 100%;
 }
 
 .yourespecial .effects .item .effect-source,

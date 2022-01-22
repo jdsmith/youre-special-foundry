@@ -85,7 +85,8 @@
       }
     },
     "perk": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "summary": ""
     },
     "gear": {
       "templates": ["base", "gear"]

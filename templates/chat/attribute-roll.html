@@ -1,6 +1,6 @@
 <div class="attribute-roll">
     <div class="roll-header">
-        <h2>Rolling {{attribute}}...</h2>
+        <h2>{{ title }}</h2>
     </div>
     <div class="roll-total">
         {{ total }} {{pluralize total "success" "successes"}}
@@ -15,6 +15,12 @@
         <h3>Draw!</h3>
     {{/if}}
     <div class="dice-rolls">
-        Rolled {{#each dice as | die id |}} <span class="roll-result">{{die.result}}</span> {{/each}}
+        Rolled {{#each dice as | die id |}}
+            {{#gt die.result 3}}
+                <span class="roll-result success">{{die.result}}</span>
+            {{else}}
+                <span class="roll-result">{{die.result}}</span>
+            {{/gt}}
+        {{/each}}
     </div>
 </div>

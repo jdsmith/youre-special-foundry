@@ -1,7 +1,7 @@
 {
   "name": "yourespecial",
-  "title": "You&#39;re SPECIAL",
-  "description": "The You&#39;re SPECIAL system for FoundryVTT!",
+  "title": "You're SPECIAL",
+  "description": "The You're SPECIAL system for FoundryVTT!",
   "version": "1.0.0",
   "minimumCoreVersion": "0.8.6",
   "compatibleCoreVersion": "9",

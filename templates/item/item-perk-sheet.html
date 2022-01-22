@@ -3,14 +3,15 @@
       <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       <div class="header-fields">
         <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-        </div>
+      </div>
       </div>
     </header>
+    <div class="form-group">
+      <label for="data.summary">Perk Summary</label>
+      <input name="data.summary" type="text" value="{{data.summary}}" /> 
+    </div>
 
-    <section class="sheet-body">
-      <div>
-        {{editor content=data.description target="data.description" rollData=rollData button=true owner=owner editable=editable}}
-      </div>
+    <section class="perk-description-editor">
+      {{editor content=data.description target="data.description" rollData=rollData button=true owner=owner editable=editable}}
     </section>
   </form>
-  

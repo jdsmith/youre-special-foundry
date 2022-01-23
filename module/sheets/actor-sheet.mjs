@@ -167,6 +167,9 @@ export class YoureSpecialActorSheet extends ActorSheet {
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
 
+    // item updates
+    html.find(".item-prop input").click(ev => ev.target.select()).change(this._onItemNumberAttributeChange.bind(this));
+
     // Drag events for macros.
     if (this.actor.owner) {
       let handler = ev => this._onDragStart(ev);
@@ -176,6 +179,15 @@ export class YoureSpecialActorSheet extends ActorSheet {
         li.addEventListener("dragstart", handler, false);
       });
     }
+  }
+
+  async _onItemNumberAttributeChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const path = event.currentTarget.dataset.path;
+    const item = this.actor.items.get(itemId);
+    const value = parseInt(event.target.value);
+    return item.update({ [path]: value });
   }
 
   /**

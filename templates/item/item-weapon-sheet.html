@@ -3,7 +3,7 @@
       <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       <div class="header-fields">
         <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-        <div class="grid grid-2col">
+        <div class="grid grid-3col">
           <div class="resource">
             <label class="resource-label">Quantity</label>
             <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
@@ -16,40 +16,50 @@
             <label class="resource-label">Price</label>
             <input type="text" name="data.price" value="{{data.price}}" data-dtype="Number"/>
           </div>
+        </div>
+        <div class="grid grid-2col">
           <div class="resource">
             <label class="resource-label">ATK</label>
-            <select name="data.atk">
-                {{#select data.atk}}
-                    <option value="strength">Strength</option>
-                    <option value="perception">Perception</option>
-                    <option value="endurance">Endurance</option>
-                    <option value="charisma">Charisma</option>
-                    <option value="intelligence">Intelligence</option>
-                    <option value="agility">Agility</option>
-                    <option value="luck">Luck</option>
-                {{/select}}
-            </select>
+            <div>
+              <select name="data.atk">
+                  {{#select data.atk}}
+                      <option value="strength">Strength</option>
+                      <option value="perception">Perception</option>
+                      <option value="endurance">Endurance</option>
+                      <option value="charisma">Charisma</option>
+                      <option value="intelligence">Intelligence</option>
+                      <option value="agility">Agility</option>
+                      <option value="luck">Luck</option>
+                  {{/select}}
+              </select>
+            </div>
           </div>
           <div class="resource">
             <label class="resource-label">DAM</label>
-            <input type="text" name="data.dam.value" value="{{data.dam.value}}" data-dtype="Number"/>
-            +
-            <select name="data.dam.modifiedBy">
-                {{#select data.dam.modifiedBy}}
-                    <option value="">-</option>
-                    <option value="strength">S</option>
-                    <option value="perception">P</option>
-                    <option value="endurance">E</option>
-                    <option value="charisma">C</option>
-                    <option value="intelligence">I</option>
-                    <option value="agility">A</option>
-                    <option value="luck">L</option>
-                {{/select}}
-            </select>
+            <div class="flexrow">
+              <input type="text" name="data.dam.value" value="{{data.dam.value}}" data-dtype="Number"/>
+              +
+              <select name="data.dam.modifiedBy">
+                  {{#select data.dam.modifiedBy}}
+                      <option value="">-</option>
+                      <option value="strength">S</option>
+                      <option value="perception">P</option>
+                      <option value="endurance">E</option>
+                      <option value="charisma">C</option>
+                      <option value="intelligence">I</option>
+                      <option value="agility">A</option>
+                      <option value="luck">L</option>
+                  {{/select}}
+              </select>
+            </div>
           </div>
           <div class="resource">
             <label class="resource-label">Ammo</label>
             <input type="text" name="data.ammo.currentAmount" value="{{data.ammo.currentAmount}}" data-dtype="Number"/>
+          </div>
+          <div class="resource">
+            <label class="resource-label">Current Condition</label>
+            <input type="text" name="data.currentCondition" value="{{data.currentCondition}}" data-dtype="Number"/>
           </div>
         </div>
       </div>
@@ -67,17 +77,25 @@
     {{!-- Attributes Tab --}}
       <div class="tab attributes" data-group="primary" data-tab="attributes">
         {{!-- As you add new fields, add them in here! --}}
-        <div class="resource">
-            <label class="resource-label">Range</label>
-            <input type="text" name="data.range" value="{{data.range}}" data-dtype="String"/>
+        <div class="grid grid-2col">
+          <div class="resource">
+              <label class="resource-label">Range</label>
+              <input type="text" name="data.range" value="{{data.range}}" data-dtype="String"/>
+          </div>
+          <div class="resource">
+              <label class="resource-label">Condition Segments</label>
+              <input type="text" name="data.conditionSegments" value="{{data.conditionSegments}}" data-dtype="Number"/>
+          </div>
         </div>
-        <div class="resource">
-            <label class="resource-label">Ammo Type</label>
-            <input type="text" name="data.ammo.type" value="{{data.ammo.type}}" data-dtype="String"/>
-        </div>
-        <div class="resource">
-            <label class="resource-label">Ammo Capacity</label>
-            <input type="text" name="data.ammo.capacity" value="{{data.ammo.capacity}}" data-dtype="Number"/>
+        <div class="grid grid-2col">
+          <div class="resource">
+              <label class="resource-label">Ammo Type</label>
+              <input type="text" name="data.ammo.type" value="{{data.ammo.type}}" data-dtype="String"/>
+          </div>
+          <div class="resource">
+              <label class="resource-label">Ammo Capacity</label>
+              <input type="text" name="data.ammo.capacity" value="{{data.ammo.capacity}}" data-dtype="Number"/>
+          </div>
         </div>
         <div class="resource">
             <label class="resource-label">Notes</label>

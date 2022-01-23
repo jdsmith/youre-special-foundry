@@ -326,6 +326,11 @@
   padding: 0 8px;
 }
 
+.yourespecial .small-number-input {
+  display: inline-block;
+  width: 15px;
+}
+
 .yourespecial .resource-label {
   font-weight: bold;
 }

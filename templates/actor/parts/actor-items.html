@@ -14,8 +14,8 @@
       <td class="item-encumbrance">ENB</td>
       <td class="item-condition">CND</td>
       <td class="item-notes">Notes</td>
-      <td class="item-controls">
-        <a class="item-control item-create" title="Create weapon" data-type="weapon"><i class="fas fa-plus"></i> Add weapon</a>
+      <td>
+        <a class="item-control item-create" title="Create weapon" data-type="weapon"><i class="fas fa-plus"></i> Add</a>
       </td>
     </tr>
     {{#each weapons as |weapon id|}}
@@ -31,7 +31,7 @@
         <td class="item-formula item-prop">{{weapon.data.range}}</td>
         <td class="item-formula item-prop">
           {{#if weapon.data.ammo.type}}
-            <input value="{{weapon.data.ammo.currentAmount}}" name="data.weapons.{{id}}.data.ammo.currentAmount" type="text" class="small-number-input" /> / {{weapon.data.ammo.capacity}} {{weapon.data.ammo.typee}}
+            <input value="{{weapon.data.ammo.currentAmount}}" data-path="data.ammo.currentAmount" type="text" class="small-number-input" /> / {{weapon.data.ammo.capacity}}
           {{/if}}
         </td>
         <td class="item-formula item-prop">{{weapon.data.price}}</td>
@@ -56,8 +56,8 @@
       <td class="item-encumbrance">ENB</td>
       <td class="item-notes">Notes</td>
       <td class="item-equipped">Equipped?</td>
-      <td class="item-controls">
-        <a class="item-control item-create" title="Create armor" data-type="armor"><i class="fas fa-plus"></i> Add armor</a>
+      <td>
+        <a class="item-control item-create" title="Create armor" data-type="armor"><i class="fas fa-plus"></i> Add</a>
       </td>
     </tr>
     {{#each armor as |armorItem id|}}
@@ -90,8 +90,8 @@
       <td class="item-encumbrance">Price</td>
       <td class="item-encumbrance">ENB</td>
       <td class="item-notes">Notes</td>
-      <td class="item-controls">
-        <a class="item-control item-create" title="Create gear" data-type="gear"><i class="fas fa-plus"></i> Add gear</a>
+      <td>
+        <a class="item-control item-create" title="Create gear" data-type="gear"><i class="fas fa-plus"></i> Add</a>
       </td>
     </tr>
     {{#each gear as |item id|}}
@@ -103,7 +103,7 @@
           <h4>{{item.name}}</h4>
         </td>
         <td class="item-formula item-prop">
-          <input type="text" value="{{item.data.quantity}}" class="small-number-input" data-path="data.quantity" />
+          <input type="text" value="{{item.data.quantity}}" data-path="data.quantity" />
         </td>
         <td class="item-formula item-prop">{{item.data.price}}</td>
         <td class="item-formula item-prop">{{item.data.enb}}</td>

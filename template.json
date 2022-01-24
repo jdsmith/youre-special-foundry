@@ -67,7 +67,7 @@
     }
   },
   "Item": {
-    "types": ["gear", "weapon", "armor", "chem", "aid", "perk", "ammo"],
+    "types": ["gear", "weapon", "armor", "chem", "aid", "perk", "ammo", "container"],
     "templates": {
       "base": {
         "name": "",
@@ -77,7 +77,8 @@
         "enb": 1,
         "quantity": 1,
         "notes": "",
-        "price": 0
+        "price": 0,
+        "equipped": false
       },
       "gearCondition": {
         "conditionSegments": 3,
@@ -98,19 +99,26 @@
         "modifiedBy": "strength"
       },
       "atk": "strength",
-      "type": "melee",
-      "range": "melee",
+      "range": {
+        "melee": false,
+        "close": false,
+        "far": false,
+        "extreme": false
+      },
       "ammo": {}
     },
     "armor": {
       "templates": ["base", "gear", "gearCondition"],
       "dr": 1,
-      "agilityPenalty": 0,
-      "equipped": false
+      "agilityPenalty": 0
     },
     "ammo": {
       "templates": ["base", "gear"],
       "type": ""
+    },
+    "container": {
+      "templates": ["base", "gear"],
+      "enbBonus": 0
     }
   }
 }

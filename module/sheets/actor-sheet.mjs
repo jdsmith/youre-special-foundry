@@ -85,7 +85,9 @@ export class YoureSpecialActorSheet extends ActorSheet {
     const weapons = [];
     const chems = [];
     const aid = [];
-    const armor = []
+    const armor = [];
+    const containers = [];
+    const ammo = [];
     const perks = [];
     let totalDR = 0;
     let totalENB = 0;
@@ -99,6 +101,9 @@ export class YoureSpecialActorSheet extends ActorSheet {
       // Append to gear.
       if (i.type === 'gear') {
         gear.push(i);
+      }
+      else if (i.type === 'ammo') {
+        ammo.push(i);
       }
       else if (i.type === 'weapon') {
         weapons.push(i);
@@ -116,6 +121,12 @@ export class YoureSpecialActorSheet extends ActorSheet {
       else if (i.type === 'aid') {
         aid.push(i);
       }
+      else if (i.type === 'container') {
+        containers.push(i);
+        if (i.data.equipped) {
+          context.data.enbLimit += i.data.enbBonus;
+        }
+      }
       // Append to perks.
       else if (i.type === 'perk') {
         perks.push(i);
@@ -126,8 +137,10 @@ export class YoureSpecialActorSheet extends ActorSheet {
     context.gear = gear;
     context.armor = armor;
     context.weapons = weapons;
+    context.ammo = ammo;
     context.aid = aid;
     context.chems = chems;
+    context.containers = containers;
     context.perks = perks;
     context.dr = totalDR;
     context.currentEncumbrance = totalENB;

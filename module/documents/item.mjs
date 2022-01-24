@@ -18,6 +18,10 @@ export class YoureSpecialItem extends Item {
       itemData.dam.descriptor = itemData.dam.modifiedBy ? (
         `${itemData.dam.value} + ${CONFIG.YOURESPECIAL.attributes[itemData.dam.modifiedBy].abbreviation}`
       ) : itemData.dam.value
+      // fix old ranges
+      if (typeof itemData.range === 'string') {
+        itemData.range = { melee: false, close: false, far: false, extreme: false };
+      }
     }
   }
 

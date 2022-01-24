@@ -77,6 +77,10 @@ Handlebars.registerHelper('gt', function( a, b ){
 	return (a > b) ? next.fn(this) : next.inverse(this);
 });
 
+Handlebars.registerHelper('ifIn', function(value, array) {
+  return array.includes(value);
+})
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

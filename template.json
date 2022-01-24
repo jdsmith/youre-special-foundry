@@ -102,6 +102,7 @@
       "range": {
         "melee": false,
         "close": false,
+        "medium": false,
         "far": false,
         "extreme": false
       },

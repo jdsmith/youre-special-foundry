@@ -77,10 +77,27 @@
     {{!-- Attributes Tab --}}
       <div class="tab attributes" data-group="primary" data-tab="attributes">
         {{!-- As you add new fields, add them in here! --}}
+        <div class="resource range-selector">
+          <label class="resource-label">Range</label>
+          <div class="grid grid-4col">
+            <div class="flexrow flex-group-left">
+              <input type="checkbox" {{checked data.range.melee}} name="data.range.melee" /> <span>Melee</span>
+            </div>
+            <div class="flexrow flex-group-left">
+              <input type="checkbox" {{checked data.range.close}} name="data.range.close"  /> <span>Close</span>
+            </div>
+            <div class="flexrow flex-group-left">
+              <input type="checkbox" {{checked data.range.far}} name="data.range.far"/> <span>Far</span>
+            </div>
+            <div class="flexrow flex-group-left">
+              <input type="checkbox" {{checked data.range.extreme}} name="data.range.extreme" /> <span>Extreme</span>
+            </div>
+          </div>
+      </div>
         <div class="grid grid-2col">
           <div class="resource">
-              <label class="resource-label">Range</label>
-              <input type="text" name="data.range" value="{{data.range}}" data-dtype="String"/>
+            <label class="resource-label">Notes</label>
+            <input type="text" name="data.notes" value="{{data.notes}}" data-dtype="String"/>
           </div>
           <div class="resource">
               <label class="resource-label">Condition Segments</label>
@@ -97,17 +114,12 @@
               <input type="text" name="data.ammo.capacity" value="{{data.ammo.capacity}}" data-dtype="Number"/>
           </div>
         </div>
-        <div class="resource">
-            <label class="resource-label">Notes</label>
-            <input type="text" name="data.notes" value="{{data.notes}}" data-dtype="String"/>
-        </div>
       </div>
   
       {{!-- Description Tab --}}
       <div class="tab" data-group="primary" data-tab="description">
         {{editor content=data.description target="data.description" rollData=rollData button=true owner=owner editable=editable}}
       </div>
-
     </section>
   </form>
   

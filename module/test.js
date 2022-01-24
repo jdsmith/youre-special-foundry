@@ -3,7 +3,7 @@ const attributeRollTemplate = 'systems/yourespecial/templates/chat/attribute-rol
 async function _processTestOptions(form) {
     return {
         difficulty: parseInt(form.difficulty.value),
-        testModifier: parseInt(form.testModifier.value),
+        testModifier: parseInt(form.testModifier.value.trim().replace('+', '')),
     };
 }
 

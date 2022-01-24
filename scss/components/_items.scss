@@ -119,8 +119,14 @@
   padding: 0 8px;
 }
 
-.encumbrance-summary {
-  margin-top: 15px;
+.inventory-summary {
+  display: flex;
+  justify-content: space-between;
+  margin:15px 0;
+  align-items: center;
+  h3 {
+    margin: 0
+  }
 }
 
 .perk-description-editor, .perk-description-editor .editor {

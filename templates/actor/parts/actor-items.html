@@ -1,6 +1,14 @@
 <div>
   <div class="inventory-summary">
-    <h3>Encumbrance: {{ currentEncumbrance }} / {{ data.enbLimit }}</h3>
+    <div class="flexbox flex-group-left">
+      <h3>
+        Encumbrance: {{ currentEncumbrance }} / {{ data.enbLimit }} &nbsp;
+      </h3>
+      {{#gt currentEncumbrance data.enbLimit}}
+          <img src="systems/yourespecial/images/StrongBack.png" height="50" alt="Over-encumbered!" title="You are over-encumbered!" />
+      {{/gt}}
+    </div>
+    
     <div class="flexbox flex-group-left">
       <h3>Caps:&nbsp;</h3> <input type="text" value="{{data.caps}}" name="data.caps" />
     </div>

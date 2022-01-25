@@ -249,8 +249,19 @@
   color: white;
 }
 
-.dice-row {
+.sheet header.sheet-header .dice-row {
   padding-top: 13px;
+}
+
+.sheet header.sheet-header .dice-row img {
+  height: 30px;
+  border: none;
+}
+
+.sheet header.sheet-header .dice-row img:hover {
+  -webkit-box-shadow: 0 0 10px red;
+  box-shadow: 0 0 10px red;
+  background-color: #ee887c;
 }
 
 /* Styles limited to yourespecial sheets */
@@ -491,7 +502,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 15px 0;
+  height: 50px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -499,6 +510,10 @@
 
 .yourespecial .inventory-summary h3 {
   margin: 0;
+}
+
+.yourespecial .inventory-summary img {
+  border: none;
 }
 
 .yourespecial .perk-description-editor, .yourespecial .perk-description-editor .editor {

@@ -297,9 +297,6 @@
 }
 
 .yourespecial .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }

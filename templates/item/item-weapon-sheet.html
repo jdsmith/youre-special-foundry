@@ -79,17 +79,20 @@
         {{!-- As you add new fields, add them in here! --}}
         <div class="resource range-selector">
           <label class="resource-label">Range</label>
-          <div class="grid grid-4col">
-            <div class="flexrow flex-group-left">
+          <div class="grid grid-5col">
+            <div class="flexbox flex-group-center">
               <input type="checkbox" {{checked data.range.melee}} name="data.range.melee" /> <span>Melee</span>
             </div>
-            <div class="flexrow flex-group-left">
+            <div class="flexbox flex-group-center">
               <input type="checkbox" {{checked data.range.close}} name="data.range.close"  /> <span>Close</span>
             </div>
-            <div class="flexrow flex-group-left">
+            <div class="flexbox flex-group-center">
+              <input type="checkbox" {{checked data.range.medium}} name="data.range.medium"  /> <span>Medium</span>
+            </div>
+            <div class="flexbox flex-group-center">
               <input type="checkbox" {{checked data.range.far}} name="data.range.far"/> <span>Far</span>
             </div>
-            <div class="flexrow flex-group-left">
+            <div class="flexbox flex-group-center">
               <input type="checkbox" {{checked data.range.extreme}} name="data.range.extreme" /> <span>Extreme</span>
             </div>
           </div>

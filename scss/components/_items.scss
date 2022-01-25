@@ -122,10 +122,13 @@
 .inventory-summary {
   display: flex;
   justify-content: space-between;
-  margin:15px 0;
+  height: 50px;
   align-items: center;
   h3 {
     margin: 0
+  }
+  img {
+    border: none;
   }
 }
 

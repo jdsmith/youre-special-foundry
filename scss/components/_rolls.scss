@@ -19,6 +19,14 @@
     }
 }
 
-.dice-row {
+.sheet header.sheet-header .dice-row {
     padding-top: 13px;
+    img {
+        height: 30px;
+        border: none;
+        &:hover {
+            box-shadow: 0 0 10px red;
+            background-color: #ee887c;
+        }
+    }
 }

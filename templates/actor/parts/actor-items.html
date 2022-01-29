@@ -45,15 +45,15 @@
             {{/if}}
           {{/each}}
         </td>
-        <td class="item-formula item-prop">
+        <td class="item-formula item-prop item-prop-modify-number">
           {{#if weapon.data.ammo.type}}
-            <input value="{{weapon.data.ammo.currentAmount}}" data-path="data.ammo.currentAmount" type="text" class="small-number-input" /> / {{weapon.data.ammo.capacity}}
+            <input value="{{weapon.data.ammo.currentAmount}}" name="data.ammo.currentAmount" type="text" class="small-number-input" /> / {{weapon.data.ammo.capacity}}
           {{/if}}
         </td>
         <td class="item-formula item-prop">{{weapon.data.price}}</td>
         <td class="item-formula item-prop">{{weapon.data.enb}}</td>
-        <td class="item-formula item-prop">
-          <input type="text" value="{{weapon.data.currentCondition}}" class="small-number-input" data-path="data.currentCondition" /> / {{weapon.data.conditionSegments}}
+        <td class="item-formula item-prop item-prop-modify-number">
+          <input type="text" value="{{weapon.data.currentCondition}}" class="small-number-input" name="data.currentCondition" /> / {{weapon.data.conditionSegments}}
         </td>
         <td class="item-formula item-prop">{{weapon.data.notes}}</td>
         <td class="item-controls">
@@ -100,6 +100,7 @@
       <td class="item-agilityPenalty">-AGL</td>
       <td class="item-price">Price</td>
       <td class="item-encumbrance">ENB</td>
+      <td class="item-condition">CND</td>
       <td class="item-notes">Notes</td>
       <td class="item-equipped">Equipped?</td>
       <td>
@@ -118,9 +119,12 @@
         <td class="item-formula item-prop">{{armorItem.data.agilityPenalty}}</td>
         <td class="item-formula item-prop">{{armorItem.data.price}}</td>
         <td class="item-formula item-prop">{{armorItem.data.enb}}</td>
+        <td class="item-formula item-prop item-prop-modify-number">
+          <input type="text" value="{{armorItem.data.currentCondition}}" class="small-number-input" name="data.currentCondition" /> / {{armorItem.data.conditionSegments}}
+        </td>
         <td class="item-formula item-prop">{{armorItem.data.notes}}</td>
-        <td class="item-formula item-prop">
-          {{armorItem.data.equipped}}
+        <td class="item-formula item-prop item-prop-modify-bool">
+          <input type="checkbox" name="data.equipped" {{checked armorItem.data.equipped}} />
         </td>
         <td class="item-controls">
           <a class="item-control item-edit" title="Edit Armor"><i class="fas fa-edit"></i></a>

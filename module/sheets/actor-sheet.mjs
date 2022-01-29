@@ -181,7 +181,8 @@ export class YoureSpecialActorSheet extends ActorSheet {
     html.find('.rollable').click(this._onRoll.bind(this));
 
     // item updates
-    html.find(".item-prop input").click(ev => ev.target.select()).change(this._onItemNumberAttributeChange.bind(this));
+    html.find(".item-prop-modify-number input").click(ev => ev.target.select()).change(this._onItemNumberAttributeChange.bind(this));
+    html.find(".item-prop-modify-bool input").click(ev => ev.target.select()).change(this._onItemBooleanAttributeChange.bind(this));
 
     // Drag events for macros.
     if (this.actor.owner) {
@@ -197,9 +198,18 @@ export class YoureSpecialActorSheet extends ActorSheet {
   async _onItemNumberAttributeChange(event) {
     event.preventDefault();
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
-    const path = event.currentTarget.dataset.path;
+    const path = event.currentTarget.name;
     const item = this.actor.items.get(itemId);
     const value = parseInt(event.target.value);
+    return item.update({ [path]: value });
+  }
+
+  async _onItemBooleanAttributeChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const path = event.currentTarget.name;
+    const item = this.actor.items.get(itemId);
+    const value = !!event.target.checked;
     return item.update({ [path]: value });
   }
 

@@ -513,7 +513,7 @@
   border: none;
 }
 
-.yourespecial .perk-description-editor, .yourespecial .perk-description-editor .editor {
+.yourespecial .description-editor, .yourespecial .description-editor .editor {
   height: 100%;
 }
 

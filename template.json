@@ -83,6 +83,11 @@
       "gearCondition": {
         "conditionSegments": 3,
         "currentCondition": 0
+      },
+      "chems": {
+        "effects": "",
+        "addictionTest": "",
+        "addictionEffects": ""
       }
     },
     "perk": {
@@ -120,6 +125,16 @@
     "container": {
       "templates": ["base", "gear"],
       "enbBonus": 0
+    },
+    "chem": {
+      "templates": ["base", "gear"],
+      "effects": "",
+      "addictionTest": "",
+      "addictionEffects": ""
+    },
+    "aid": {
+      "templates": ["base", "gear"],
+      "effects": ""
     }
   }
 }

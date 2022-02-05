@@ -1,4 +1,8 @@
 .attribute-roll {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    
     .success {
         color: #058C00;
     }

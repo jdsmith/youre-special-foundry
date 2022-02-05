@@ -229,6 +229,18 @@
   text-align: center;
 }
 
+.attribute-roll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-column-gap: 15px;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+}
+
 .attribute-roll .success {
   color: #058C00;
 }
@@ -347,6 +359,29 @@
 
 .yourespecial .resource-label {
   font-weight: bold;
+}
+
+.yourespecial .feature-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 15px;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.yourespecial .feature-row h3 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.yourespecial .feature-row input {
+  width: 50px;
 }
 
 .yourespecial .items-header {

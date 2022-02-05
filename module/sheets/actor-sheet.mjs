@@ -95,8 +95,11 @@ export class YoureSpecialActorSheet extends ActorSheet {
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || CONFIG.YOURESPECIAL.defaults.itemImg;
+
       const enb = i.data.quantity * i.data.enb;
-      totalENB += enb;
+      if (!Number.isNaN(enb)) {
+        totalENB += enb;
+      }
 
       // Append to gear.
       if (i.type === 'gear') {

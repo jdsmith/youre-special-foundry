@@ -45,6 +45,26 @@ export class YoureSpecialItem extends Item {
     return null;
   }
 
+  getShortDescription() {
+    const itemData = this.data.data;
+    if (this.type === 'chem') {
+      return `${itemData.effects}; Addiction: ${itemData.addictionTest}; ${itemData.addictionEffects}`;
+    }
+    if (this.type === 'aid') {
+      return item.effects;
+    }
+    if (this.type === 'armor') {
+      return `DR: ${itemData.dr}; -AGL: ${itemData.agilityPenalty}; ${itemData.notes}`
+    }
+    if (this.type === 'container') {
+      return `Increases ENB limit by ${itemData.enbBonus}; ${itemData.notes}`;
+    }
+    if (this.type === 'perk') {
+      return itemData.summary;
+    }
+    return itemData.notes;
+  }
+
   /**
    * Handle clickable rolls.
    * @param {Event} event   The originating click event
@@ -59,16 +79,16 @@ export class YoureSpecialItem extends Item {
 
     // If there's no roll data, send a chat message.
     if (!testAttribute) {
+      const shortDescription = this.getShortDescription();
+      const content = await renderTemplate("systems/yourespecial/templates/chat/item-chat.html", { item, shortDescription });
       ChatMessage.create({
         speaker: speaker,
-        rollMode: rollMode,
-        flavor: label,
-        content: item.data.description ?? ''
+        content
       });
     }
     // Otherwise, create a roll and send a chat message from it.
     else {
-      return rollTest(testAttribute, this.actor);
+      return rollTest(testAttribute, this.actor, this);
     }
   }
 }

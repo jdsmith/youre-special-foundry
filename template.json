@@ -45,6 +45,7 @@
             "value": 1
           }
         },
+        "radResistance": 0,
         "ap": {
           "value": 3,
           "max": 3

@@ -31,8 +31,17 @@ export async function getTestOptions(options = {}) {
     });
 }
 
-export async function rollTest(testAttribute, actor) {
-    const rollMode = game.settings.get('core', 'rollMode');
+const getRollTitle = (testAttribute, numberOfDice, item = null) => {
+    if (item) {
+        return item.name;
+    }
+    if (testAttribute) {
+        return `Rolling ${testAttribute}...`;
+    }
+    return `Rolling ${numberOfDice}`;
+}
+
+export async function rollTest(testAttribute, actor, item = null) {
     const rollData = actor.getRollData();
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor });
@@ -49,7 +58,8 @@ export async function rollTest(testAttribute, actor) {
     const result = await roll.roll({async: true});
     const total = result.total;
     const diceValues = result.dice[0].results;
-    const title = testAttribute ? `Rolling ${attributes[testAttribute].text}...` : `Rolling ${numberOfDice} dice...`;
+    const title = getRollTitle(testAttribute, numberOfDice, item);
+    const img = item ? item.img : null;
     const resultData = {
         total,
         success: testOptions.difficulty && total > testOptions.difficulty,
@@ -57,6 +67,7 @@ export async function rollTest(testAttribute, actor) {
         draw: testOptions.difficulty && total === testOptions.difficulty,
         title,
         dice: diceValues,
+        img,
     }
     const content = await renderTemplate(attributeRollTemplate, resultData);
     result.toMessage({ speaker: speaker, content });

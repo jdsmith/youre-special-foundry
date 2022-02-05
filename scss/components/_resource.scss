@@ -1,3 +1,17 @@
 .resource-label {
   font-weight: bold;
 }
+
+.feature-row {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+
+  h3 {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  input {
+    width: 50px;
+  }
+}

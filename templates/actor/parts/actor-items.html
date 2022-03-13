@@ -81,8 +81,8 @@
           </div>
           <h4>{{item.name}}</h4>
         </td>
-        <td class="item-formula item-prop">
-          <input type="text" value="{{item.data.quantity}}" data-path="data.quantity" />
+        <td class="item-formula item-prop item-prop-modify-number">
+          <input type="text" value="{{item.data.quantity}}" name="data.quantity" />
         </td>
         <td class="item-formula item-prop">{{item.data.price}}</td>
         <td class="item-formula item-prop">{{item.data.enb}}</td>
@@ -158,8 +158,8 @@
           </div>
           <h4>{{item.name}}</h4>
         </td>
-        <td class="item-formula item-prop">
-          <input type="text" value="{{item.data.quantity}}" data-path="data.quantity" class="small-number-input" />
+        <td class="item-formula item-prop item-prop-modify-number">
+          <input type="text" value="{{item.data.quantity}}" name="data.quantity" class="small-number-input" />
         </td>
         <td class="item-formula item-prop">{{item.data.price}}</td>
         <td class="item-formula item-prop">{{item.data.enb}}</td>
@@ -194,8 +194,8 @@
           </div>
           <h4>{{item.name}}</h4>
         </td>
-        <td class="item-formula item-prop">
-          <input type="text" value="{{item.data.quantity}}" data-path="data.quantity" class="small-number-input" />
+        <td class="item-formula item-prop item-prop-modify-number">
+          <input type="text" value="{{item.data.quantity}}" name="data.quantity" class="small-number-input" />
         </td>
         <td class="item-formula item-prop">{{item.data.price}}</td>
         <td class="item-formula item-prop">{{item.data.enb}}</td>
@@ -228,8 +228,8 @@
           </div>
           <h4>{{item.name}}</h4>
         </td>
-        <td class="item-formula item-prop">
-          <input type="text" value="{{item.data.quantity}}" data-path="data.quantity" class="small-number-input" />
+        <td class="item-formula item-prop item-prop-modify-number">
+          <input type="text" value="{{item.data.quantity}}" name="data.quantity" class="small-number-input" />
         </td>
         <td class="item-formula item-prop">{{item.data.price}}</td>
         <td class="item-formula item-prop">{{item.data.enb}}</td>
@@ -263,13 +263,13 @@
             </div>
             <h4>{{item.name}}</h4>
           </td>
-          <td class="item-formula item-prop">
-            <input type="text" value="{{item.data.quantity}}" data-path="data.quantity" class="small-number-input" />
+          <td class="item-formula item-prop item-prop-modify-number">
+            <input type="text" value="{{item.data.quantity}}" name="data.quantity" class="small-number-input" />
           </td>
           <td class="item-formula item-prop">{{item.data.price}}</td>
           <td class="item-formula item-prop">{{item.data.enb}}</td>
           <td class="item-formula item-prop">{{item.data.enbBonus}}</td>
-          <td class="item-formula item-prop">
+          <td class="item-formula item-prop item-prop-modify-bool">
             <input type="checkbox" name="data.equipped" {{checked item.data.equipped}} />
           </td>
           <td class="item-controls">
